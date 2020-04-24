@@ -42,7 +42,7 @@ function talker() {
         // Publish over ROS
         pub.publish(msg);
         // Log through stdout and /rosout
-        rosnodejs.log.info('I said: [' + msg.data + ']');
+        rosnodejs.log.info('I said: [' + msg.data + '] in node.js');
         ++count;
       }, 100);
     });
