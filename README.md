@@ -57,3 +57,7 @@ You should see echoed output like the following:
 ```
 
 Congratulations! You've just published and subscribed over ROS using Javascript!
+
+---------------------------------------------------------------------------------
+
+added `source ~/rosnodejs_ws/devel/setup.bash` message in ~/.bashrc
