@@ -60,4 +60,6 @@ Congratulations! You've just published and subscribed over ROS using Javascript!
 
 ---------------------------------------------------------------------------------
 
+## 수정사항
+
 added `source ~/rosnodejs_ws/devel/setup.bash` message in ~/.bashrc
