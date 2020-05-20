@@ -10,6 +10,13 @@
 		<p id="changetext"> Text </p>
 		<button onclick="changedata()"> BUTTON1 </button><br>
 		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io.connect();
+
+			function changedata() {
+				socket.emit('DataChange');
+			}
+		</script>
 	</body>
 </html>
 
