@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> rosnodejs-Publisher </title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1> Open Source S/W Project - Publisher Page </h1>
+		<p> Click Button </p>
+		<button onclick="changedata()"> BUTTON1 </button><br>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io.connect();
+
+			function changedata() {
+				socket.emit('DataChange');
+			}
+		</script>
+	</body>
+</html>
+
