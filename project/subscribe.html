@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> rosnodejs-Subscriber </title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+		<script type="text/javascript" src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1> Open Source S/W Project - Subscriber Page </h1>
+		<p id="topicdata"> Text </p>
+		<script>
+			var ros = new ROSLIB.Ros({
+       				url : 'ws://localhost:9090'
+     			});
+   
+			ros.on('connection', function() {
+       				console.log('Connected to websocket server.');
+     			});
+   
+  			ros.on('error', function(error) {
+       				console.log('Error connecting to websocket server: ', error);
+     			});
+   
+     			ros.on('close', function() {
+       				console.log('Connection to websocket server closed.');
+     			});
+
+			var listener = new ROSLIB.Topic({
+       				ros : ros,
+       				name : '/chatter',
+       				messageType : 'std_msgs/String'
+     			});
+   
+ 			listener.subscribe(function(message) {
+       				document.getElementById("topicdata").innerHTML = message.data;
+     			});
+		</script>
+	</body>
+</html>
